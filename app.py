@@ -9,7 +9,7 @@ and their relationship with deaths across countries.
 """)
 @st.cache_data
 def load_data():
-    df = pd.read_csv("C:\Users\pavan\Desktop\Data Visualization Project\owid-covid-data.csv")
+    df = pd.read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
     df['date'] = pd.to_datetime(df['date'])
     return df
 df = load_data()
@@ -74,6 +74,7 @@ fig3 = px.scatter(
 st.plotly_chart(fig3, use_container_width=True)
 st.subheader("Filtered Data Preview")
 st.dataframe(filtered_df.head(50))
+
 
 
 
